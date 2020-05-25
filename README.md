@@ -9,7 +9,7 @@ A java line command tool to calculate statistic on ascii files new line terminat
 [...] are optional parameters
 "File Name Statistic"       :   Is a csv file with default separator "|" 
 
-Each record has this format : <Type>|<Regular Expression Condition>[|<Regular Expression Extraction>][|<Label>]
+Each record has this format : "Type"|"Regular Expression Condition"[|"Regular Expression Extraction"][|"Label"]
 
 - Type                            : Z for Clean Statistic Key formed by Dimension and reinitialize conditions 
                                     C for condition
