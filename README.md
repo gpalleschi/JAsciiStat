@@ -5,9 +5,9 @@ A java line command tool to calculate statistic on ascii files new line terminat
 >   java 1.7 or upper
 ---
 ## Running
->   java -jar JAsciiStat.jar <File Ascii> [-p<separator char File Statistic>] -s<File Name Statistic>
+>   java -jar JAsciiStat.jar "File Ascii" [-p"separator char File Statistic"] -s"File Name Statistic"
 [...] are optional parameters
-<File Name Statistic>       :   Is a csv file with default separator "|" 
+"File Name Statistic"       :   Is a csv file with default separator "|" 
 
 Each record has this format : <Type>|<Regular Expression Condition>[|<Regular Expression Extraction>][|<Label>]
 
