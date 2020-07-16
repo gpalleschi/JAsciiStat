@@ -15,10 +15,10 @@ public class Stat {
     private List<Metric> lMetrics;
     private List<Increment> lIncrement;
     private String currentKey;
-    private HashMap<String, long[]> hashStat;
+    private HashMap<String, double[]> hashStat;
     
     public void displayKeys() {
-    	long[] metrics;
+    	double[] metrics;
     	long[] totMetrics;
     	
     	totMetrics = new long[lMetrics.size()];
@@ -26,7 +26,7 @@ public class Stat {
 			totMetrics[iInd] = 0;
 		}
     	
-		for (Map.Entry<String, long[]> entry : hashStat.entrySet()) {
+		for (Map.Entry<String, double[]> entry : hashStat.entrySet()) {
 			System.out.println("KEY : " + entry.getKey() +"\n");
 			metrics = entry.getValue();
 			for(int iInd=0;iInd<metrics.length;iInd++) {
@@ -52,9 +52,9 @@ public class Stat {
     
     public void addKey() {
     	if ( currentKey.length() == 0 ) return;
-    	long[] retMetrics = hashStat.get(currentKey);
+    	double[] retMetrics = hashStat.get(currentKey);
     	if ( retMetrics == null ) {
-    		retMetrics = new long[lMetrics.size()];
+    		retMetrics = new double[lMetrics.size()];
     		for(int iInd=0;iInd<lMetrics.size();iInd++) {
     			retMetrics[iInd] = lMetrics.get(iInd).getCurrentValue();
     			lMetrics.get(iInd).setCurrentValue(0L);
@@ -178,6 +178,6 @@ public class Stat {
 		lDims = new ArrayList<Dimension>();
 		lIncrement = new ArrayList<Increment>();
         currentKey = "";
-		hashStat = new HashMap<String, long[]>();
+		hashStat = new HashMap<String, double[]>();
 	}
 }

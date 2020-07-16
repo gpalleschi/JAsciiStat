@@ -17,7 +17,7 @@ import java.util.List;
 
 public class JAsciiStat {
 
-	    static String version = "1.0";
+	    static String version = "1.1";
 	    static String years="2020";
 	    static String creator="GPSoft By GNNK71";
 	    
@@ -63,6 +63,7 @@ public class JAsciiStat {
 	        System.out.println("(?<=\\()([^)]+)(?=\\))   : Extract string value between round brackets (...).\n");
 	        System.out.println("(?<=\\{)([^}]+)(?=\\})   : Extract string value between curly brackets {...}.\n");
 	        System.out.println("(?<=.{4})(.{3})          : Extract string from byte 5 for 3 bytes.\n");
+	        System.out.println("^.*$                     : True Condition.\n");
 	        return;
 		}
 		

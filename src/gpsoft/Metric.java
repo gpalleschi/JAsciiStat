@@ -8,7 +8,7 @@ public class Metric {
 	String reCondMetric;
 	String reMetric;
 	Pattern rePatMetric;
-	long currentValue;
+	double currentValue;
 
 	protected String getMentricName() {
 		return mentricName;
@@ -18,7 +18,7 @@ public class Metric {
 		this.mentricName = mentricName;
 	}
 
-	protected long getCurrentValue() {
+	protected double getCurrentValue() {
 		return currentValue;
 	}
 
@@ -34,7 +34,7 @@ public class Metric {
 //		 System.out.println("\nDEBUG Expression Metrics <"+rePatMetric+"> on strToMatch <"+ strToMatch + ">");
 	    	 while(m.find()){
 //		    	 System.out.println("\nDEBUG Get " + iInd + " <"+m.group(iInd)+">");
-			     currentValue +=  Long.parseLong(m.group(iInd), 10);
+			     currentValue += Double.parseDouble(m.group(iInd));
 //			     System.out.println("\nDEBUG Get " + iInd + " <"+m.group(iInd)+"> value " + currentValue);
 			     break;
 		     }
