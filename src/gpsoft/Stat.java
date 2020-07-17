@@ -17,11 +17,15 @@ public class Stat {
     private String currentKey;
     private HashMap<String, double[]> hashStat;
     
-    public void displayKeys() {
+    public void displayKeys(int decDig) {
     	double[] metrics;
-    	long[] totMetrics;
+    	double[] totMetrics;
     	
-    	totMetrics = new long[lMetrics.size()];
+    	String formatMetrics = new String();
+    	
+    	formatMetrics = String.format("\t%%s : %%.%df\n",decDig);
+    	
+    	totMetrics = new double[lMetrics.size()];
 		for(int iInd=0;iInd<totMetrics.length;iInd++) {
 			totMetrics[iInd] = 0;
 		}
@@ -30,7 +34,7 @@ public class Stat {
 			System.out.println("KEY : " + entry.getKey() +"\n");
 			metrics = entry.getValue();
 			for(int iInd=0;iInd<metrics.length;iInd++) {
-				System.out.println("\t" + lMetrics.get(iInd).getMentricName() + " : " + metrics[iInd]);	
+				System.out.printf(formatMetrics, lMetrics.get(iInd).getMentricName(), metrics[iInd]);	
 			    totMetrics[iInd] += metrics[iInd];
 			}
 			System.out.println("");
@@ -38,7 +42,7 @@ public class Stat {
 		if ( lMetrics.size() > 0 ) {
 		  System.out.println("\nTOTALS METRICS\n");
 		  for(int iInd=0;iInd<totMetrics.length;iInd++) {
-		  		System.out.println("\t" + lMetrics.get(iInd).getMentricName() + " : " + totMetrics[iInd]);	
+		  		System.out.printf(formatMetrics,lMetrics.get(iInd).getMentricName(), totMetrics[iInd]);	
 		  }
 		}
 		
