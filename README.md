@@ -6,17 +6,18 @@ A java line command tool to calculate statistic on ascii files new line terminat
 ---
 ## Running
 >   java -jar JAsciiStat.jar "File Ascii" [-p"separator char File Statistic"] -s"File Name Statistic"  
-[...] are optional parameters  
-"File Name Statistic"       :   Is a csv file with default separator "|"  
+  + [...] are optional parameters  
+  + "File Name Statistic"       :   Is a csv file with default separator "|"  
 
 Each record in Statistic File has a csv format like this "Type"|"Regular Expression Condition"|"Regular Expression Extraction"|"Label"  
   
-- Type                            : Z for Clean Statistic Key formed by Dimension and reinitialize conditions (format : 'Z|"Regular Expression Condition"')  
-                                    C for condition (format : 'C|"Regular Expression Condition"')  
-                                    D for dimension (format : 'D|"Regular Expression Condition"|"Regular Expression Extraction"')  
-                                    I for Counters (format : 'I|"Regular Expression Condition"|"Label to show in resume"')  
-                                    M for metrics to sums (format : 'M|"Regular Expression Condition"|"Regular Expression Extraction"|"Label to show in resume"')  
-                                    T for statistic title (format : 'T|"Label to show in resume"')  
+- Type                            :  
+  + **Z** for Clean Statistic Key formed by Dimension and reinitialize conditions *(format : 'Z|"Regular Expression Condition"')*  
+  + **C** for condition *(format : 'C|"Regular Expression Condition"')*  
+  + **D** for dimension *(format : 'D|"Regular Expression Condition"|"Regular Expression Extraction"')*  
+  + **I** for Counters *(format : 'I|"Regular Expression Condition"|"Label to show in resume"')*  
+  + **M** for metrics to sums *(format : 'M|"Regular Expression Condition"|"Regular Expression Extraction"|"Label to show in resume"')*  
+  + **T** for statistic title *(format : 'T|"Label to show in resume"')*  
   
 - Regular Expression Condition  : Is an expression to check if record read from file matches with it (true or false) is used for type Z, C, D, I, M  
 - Regular Expression Extraction : Is an exprssion to extract value from record read from file is used for type D and M  
